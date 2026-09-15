@@ -3,33 +3,26 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "Mukar Solution"
+    PROJECT_NAME: str = "Mukar Ai" 
     API_V1_STR: str = "/api/v1"
 
     # Security
-    SECRET_KEY: str = "SUPER_SECRET_KEY_REPLACE_IN_PROD"
+    SECRET_KEY: str  # plus de valeur par défaut : on veut que ça plante si oublié en prod
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 24h
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
 
-    # Database (PostgreSQL)
-    POSTGRES_SERVER: str = "localhost"
-    POSTGRES_USER: str = "postgres"
-    POSTGRES_PASSWORD: str = "123456789"
-    POSTGRES_DB: str = "mukar_ai_db"
-    POSTGRES_PORT: str = "5432"
+    # Database (Neon fournit l'URL complète)
+    DATABASE_URL: str  # ex: postgresql://user:pass@ep-xxx-pooler.eu-west-2.aws.neon.tech/dbname?sslmode=require
 
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> str:
-        return f"postgresql+psycopg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
-
-    # Redis / Celery
-    REDIS_URI: str = "redis://localhost:6379/0"
-
-    # S3 / MinIO
-    S3_ENDPOINT_URL: str = "http://localhost:8000"
-    S3_ACCESS_KEY: str = "admin"
-    S3_SECRET_KEY: str = "password123"
-    S3_BUCKET_NAME: str = "credit-documents"
+        # SQLAlchemy + psycopg v3 attendent le schéma "postgresql+psycopg://"
+        url = self.DATABASE_URL
+        if url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql+psycopg://", 1)
+        elif url.startswith("postgresql://"):
+            url = url.replace("postgresql://", "postgresql+psycopg://", 1)
+        return url
 
     # LLM / AI
     GEMINI_API_KEY: Optional[str] = None
