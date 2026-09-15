@@ -9,12 +9,12 @@ from app.db.session import engine
 # 2. Chargement de l'ensemble des modèles pour la création du schéma de BDD
 # Il est crucial d'importer tous les modèles ici pour que SQLModel les détecte.
 import app.auth.models
-import app.ressources.models
+# import app.ressources.models
 
 # 3. Import des routeurs (API minimale Point 27)
 from app.auth.endpoints import router as auth_router
 from app.analysis.endpoints import router as analysis_router
-from app.ressources.endpoints import router as ressources_router
+# from app.ressources.endpoints import router as ressources_router
 # from app.api.endpoints.tenants import router as tenants_router
 # from app.api.endpoints.clients import router as clients_router
 # from app.api.endpoints.credit import router as credit_router
@@ -53,7 +53,7 @@ app.add_middleware(
 # Enregistrement des routeurs
 app.include_router(auth_router, tags=["Authentication"], prefix='/api/auth')
 app.include_router(analysis_router, tags=['Extraction'], prefix='/api')
-app.include_router(ressources_router, tags=["Ressource Management"], prefix='/api')
+# app.include_router(ressources_router, tags=["Ressource Management"], prefix='/api')
 # app.include_router(tenants_router, tags=["Tenants"])
 # app.include_router(clients_router, tags=["Clients"])
 # app.include_router(credit_router, tags=["Credit Applications"])
