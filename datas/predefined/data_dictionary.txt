@@ -1,0 +1,866 @@
+DICTIONNAIRE DES DONNÉES — MODULE 1
+Extraction des informations financières et documentaires d’une PME
+
+OBJECTIF
+Ce document accompagne le JSON d’extraction produit par le LLM.
+Il décrit la signification de chaque champ afin que le LLM sache précisément
+quelles informations rechercher dans les documents du client et comment les
+restituer.
+
+PRINCIPES GÉNÉRAUX
+
+1. Extraction uniquement
+Extraire uniquement les informations réellement présentes dans les documents
+fournis.
+
+2. Interdiction d’invention
+Ne jamais inventer, estimer ou supposer une valeur absente des documents.
+
+3. Valeur absente
+Utiliser null lorsqu’une valeur n’est pas trouvée.
+
+4. Statuts
+EXTRACTED : information trouvée et exploitable.
+MISSING : information attendue mais absente.
+CONFLICT : plusieurs valeurs contradictoires ont été trouvées.
+LOW_CONFIDENCE : information trouvée mais extraction/interprétation incertaine.
+NOT_APPLICABLE : information ne s’applique pas au dossier.
+
+5. Source obligatoire
+Toute information extraite doit conserver sa source : nom du document,
+type de document, page, section, libellé et extrait textuel lorsque disponible.
+
+6. Pas de calcul
+Le LLM d’extraction ne doit pas calculer les ratios financiers ni interpréter
+la situation financière. Il extrait les données nécessaires aux calculs
+ultérieurs du Module 2.
+
+7. Données pluriannuelles
+Toute donnée financière pouvant exister pour plusieurs exercices doit être
+organisée par période/exercice.
+
+8. Données répétitives
+Toute information pouvant apparaître plusieurs fois doit être représentée
+sous forme de liste d’objets : transactions, dettes, comptes bancaires,
+bons de commande, proformas, contrats, marchés, flux futurs, etc.
+
+────────────────────────────────────────
+1. APPLICATION
+────────────────────────────────────────
+
+application
+Informations générales concernant la demande de crédit.
+
+application_id
+Identifiant unique de la demande de crédit. Peut provenir du dossier,
+du formulaire de demande ou d’un document interne.
+
+application_date
+Date de dépôt ou de formulation de la demande de crédit. Ne pas confondre
+avec la date de création de l’entreprise.
+
+analysis_reference_period
+Période principale couverte par les informations utilisées pour l’analyse.
+
+start_date
+Date de début de la période analysée.
+
+end_date
+Date de fin de la période analysée.
+
+status
+État global de l’extraction de la demande :
+EXTRACTED, INCOMPLETE ou READY_FOR_ANALYSIS.
+
+source
+Source générale de l’information de demande lorsqu’elle apparaît dans
+un document.
+
+confidence
+Niveau de confiance global associé à cette information.
+
+────────────────────────────────────────
+2. SOURCE
+────────────────────────────────────────
+
+source
+Objet permettant de retrouver exactement l’origine d’une donnée.
+
+document_name
+Nom du fichier/document dans lequel l’information a été trouvée.
+
+document_type
+Type du document source.
+Exemples :
+FINANCIAL_STATEMENT
+BALANCE_SHEET
+BANK_STATEMENT
+TAX_DOCUMENT
+RCCM
+STATUTES
+PURCHASE_ORDER
+PROFORMA
+CONTRACT
+BUSINESS_PLAN
+LOAN_AGREEMENT
+OTHER
+
+page
+Numéro de la page où l’information a été trouvée.
+
+section
+Section du document contenant l’information.
+Exemples :
+Compte de résultat
+Bilan actif
+Bilan passif
+Transactions
+Dettes financières
+Informations fiscales
+
+label
+Libellé associé à la donnée dans le document.
+Exemple : « Chiffre d’affaires », « EBE », « Dettes fournisseurs ».
+
+text_excerpt
+Court extrait du texte ou de la ligne/tableau permettant de vérifier
+l’information extraite.
+
+────────────────────────────────────────
+3. COMPANY
+────────────────────────────────────────
+
+company
+Informations générales et juridiques sur l’entreprise.
+
+legal_name
+Dénomination sociale officielle de l’entreprise.
+
+trade_name
+Nom commercial utilisé par l’entreprise.
+
+legal_form
+Forme juridique de l’entreprise.
+Exemples : SARL, SA, SAS, SUARL, entreprise individuelle.
+
+registration_number
+Numéro d’immatriculation au RCCM.
+
+tax_identifier
+Identifiant fiscal / numéro contribuable.
+
+activity_sector
+Secteur économique principal dans lequel l’entreprise exerce son activité.
+
+main_activity
+Description précise de l’activité principale réellement exercée.
+
+creation_date
+Date officielle de création ou d’immatriculation de l’entreprise.
+
+address
+Adresse ou localisation officielle de l’entreprise.
+
+────────────────────────────────────────
+4. CREDIT_REQUEST
+────────────────────────────────────────
+
+credit_request
+Informations relatives au financement demandé.
+
+requested_amount
+Montant du crédit demandé.
+
+purpose
+Objet principal du financement.
+Exemples :
+Fonds de roulement
+Investissement
+Achat d’équipement
+Financement de stock
+Financement de marché
+
+purpose_detail
+Description détaillée de l’utilisation prévue des fonds.
+
+requested_term_months
+Durée souhaitée du crédit, exprimée en mois.
+
+requested_interest_rate
+Taux d’intérêt demandé ou proposé lorsque ce taux est explicitement présent
+dans les documents.
+
+grace_period_months
+Durée du différé d’amortissement, en mois, lorsqu’elle existe.
+
+repayment_frequency
+Fréquence prévue des remboursements.
+Exemples : mensuelle, trimestrielle, hebdomadaire.
+
+borrower_contribution
+Montant apporté par l’entreprise sur ses propres ressources pour financer
+le projet.
+
+────────────────────────────────────────
+5. FINANCIAL_STATEMENTS
+────────────────────────────────────────
+
+financial_statements
+Données issues des états financiers, structurées par exercice.
+
+periods[]
+Liste des exercices comptables disponibles.
+
+period
+Exercice concerné par l’objet.
+
+revenue_ht
+Chiffre d’affaires hors taxes de l’exercice.
+
+revenue_ttc
+Chiffre d’affaires toutes taxes comprises lorsqu’il est explicitement indiqué.
+
+purchases
+Montant des achats de l’exercice lorsqu’il est disponible.
+
+cost_of_goods_sold
+Coût des marchandises vendues ou coût directement associé aux ventes
+lorsqu’il est explicitement identifiable.
+
+gross_margin
+Marge brute telle qu’elle apparaît dans les états financiers.
+Ne pas calculer cette marge dans le Module 1.
+
+operating_expenses
+Charges d’exploitation identifiables pour l’exercice.
+
+ebe
+Excédent Brut d’Exploitation de l’exercice.
+
+depreciation
+Dotations aux amortissements/amortissements lorsque l’information
+est disponible.
+
+financial_expenses
+Charges financières, intérêts et frais financiers identifiables.
+
+taxes
+Impôts et taxes supportés par l’entreprise lorsqu’ils sont identifiables.
+
+net_income
+Résultat net de l’exercice.
+
+Pour chaque donnée financière, conserver :
+value
+currency
+source
+confidence
+status
+
+────────────────────────────────────────
+6. BALANCE_SHEET
+────────────────────────────────────────
+
+balance_sheet
+Données du bilan structurées par exercice.
+
+periods[]
+Liste des exercices pour lesquels un bilan est disponible.
+
+period
+Exercice ou date de clôture du bilan.
+
+total_assets
+Total de l’actif.
+
+fixed_assets
+Actifs immobilisés.
+
+inventory
+Stocks.
+
+trade_receivables
+Créances clients.
+
+cash
+Disponibilités en banque et caisse figurant au bilan.
+
+equity
+Capitaux propres.
+
+long_term_debt
+Dettes financières à moyen et long terme.
+
+short_term_financial_debt
+Dettes financières à court terme.
+
+trade_payables
+Dettes fournisseurs.
+
+tax_payables
+Dettes fiscales.
+
+other_current_liabilities
+Autres passifs/dettes courantes identifiables.
+
+────────────────────────────────────────
+7. BANKING
+────────────────────────────────────────
+
+banking
+Informations issues des relevés bancaires.
+
+analysis_period
+Période couverte par les relevés disponibles.
+
+start_date
+Première date couverte par les relevés.
+
+end_date
+Dernière date couverte par les relevés.
+
+duration_months
+Durée couverte par les relevés, en mois.
+
+accounts[]
+Liste des comptes bancaires identifiés.
+
+account_id
+Identifiant interne permettant de distinguer les comptes.
+
+bank_name
+Nom de la banque.
+
+account_number_masked
+Numéro de compte, masqué afin d’éviter l’exposition d’informations
+sensibles inutiles.
+
+currency
+Devise du compte.
+
+transactions[]
+Liste de toutes les transactions bancaires identifiables.
+
+transaction_id
+Identifiant interne de la transaction.
+
+account_id
+Compte auquel appartient la transaction.
+
+date
+Date de l’opération.
+
+description
+Libellé exact ou quasi exact figurant sur le relevé.
+
+debit
+Montant débité du compte. Pour une transaction uniquement créditrice,
+mettre 0 si la structure l’exige.
+
+credit
+Montant crédité sur le compte. Pour une transaction uniquement débitrice,
+mettre 0 si la structure l’exige.
+
+currency
+Devise de la transaction.
+
+balance_after_transaction
+Solde du compte après la transaction lorsqu’il figure sur le relevé.
+
+transaction_type
+Catégorie de la transaction lorsqu’elle est identifiable sans extrapolation.
+Exemples :
+CUSTOMER_PAYMENT
+SUPPLIER_PAYMENT
+BANK_TRANSFER
+CASH_WITHDRAWAL
+CASH_DEPOSIT
+LOAN_PAYMENT
+BANK_FEE
+TAX_PAYMENT
+UNKNOWN
+
+aggregates
+Totaux explicitement présents dans les documents.
+
+total_credits
+Total des crédits/crédits entrants explicitement indiqué dans le relevé
+ou un document associé.
+Ne pas recalculer ce total dans le LLM.
+
+total_debits
+Total des débits explicitement indiqué.
+Ne pas recalculer ce total dans le LLM.
+
+average_balance
+Solde moyen explicitement indiqué.
+Ne pas calculer ce montant à partir des transactions.
+
+rejected_transactions[]
+Liste des opérations rejetées.
+
+date
+Date du rejet.
+
+description
+Libellé du rejet.
+
+amount
+Montant de l’opération rejetée.
+
+currency
+Devise.
+
+reason
+Motif du rejet lorsqu’il apparaît.
+Exemple : insuffisance de provision.
+
+bank_fees[]
+Liste des frais bancaires identifiés.
+
+date
+Date du frais.
+
+description
+Libellé du frais.
+
+amount
+Montant du frais.
+
+currency
+Devise.
+
+fee_type
+Type de frais lorsqu’il est identifiable.
+Exemples :
+TRANSFER_FEE
+ACCOUNT_FEE
+REJECTION_FEE
+OVERDRAFT_FEE
+OTHER
+
+overdraft_events[]
+Liste des événements liés à l’utilisation du découvert.
+
+date
+Date de l’événement.
+
+description
+Description de l’événement.
+
+amount
+Montant du découvert utilisé ou montant associé à l’événement.
+
+currency
+Devise.
+
+overdraft_limit
+Plafond autorisé lorsqu’il est documenté.
+
+overdraft_used
+Montant effectivement utilisé lorsqu’il est documenté.
+
+commissions[]
+Liste des commissions bancaires identifiables.
+
+date
+Date de la commission.
+
+description
+Libellé de la commission.
+
+amount
+Montant de la commission.
+
+currency
+Devise.
+
+commission_type
+Type de commission lorsqu’il est identifiable.
+Exemples :
+COMMISSION
+FORCING_COMMISSION
+OVERDRAFT_COMMISSION
+TRANSFER_COMMISSION
+OTHER
+
+────────────────────────────────────────
+8. EXISTING_DEBTS[]
+────────────────────────────────────────
+
+existing_debts[]
+Liste de tous les crédits et dettes financières existants identifiés.
+
+debt_id
+Identifiant interne de la dette.
+
+lender
+Nom de la banque, EMF ou organisme prêteur.
+
+loan_type
+Type de crédit.
+Exemples :
+Crédit de trésorerie
+Crédit d’investissement
+Découvert
+Crédit équipement
+
+original_amount
+Montant initial du crédit.
+
+outstanding_principal
+Capital restant dû.
+
+interest_rate
+Taux d’intérêt du crédit.
+
+installment_amount
+Montant de l’échéance.
+
+payment_frequency
+Fréquence de remboursement.
+
+remaining_term_months
+Nombre de mois restant à courir.
+
+next_due_date
+Date de la prochaine échéance lorsqu’elle est disponible.
+
+source_document
+Document dans lequel la dette a été identifiée.
+
+────────────────────────────────────────
+9. COMMERCIAL_INFORMATION
+────────────────────────────────────────
+
+commercial_information
+Informations commerciales complémentaires permettant de comprendre
+l’activité de l’entreprise, ses clients, fournisseurs et engagements.
+
+customers[]
+Liste des clients identifiables.
+
+customer_id
+Identifiant interne.
+
+name
+Nom du client.
+
+activity
+Activité du client lorsqu’elle est disponible.
+
+suppliers[]
+Liste des fournisseurs identifiables.
+
+supplier_id
+Identifiant interne.
+
+name
+Nom du fournisseur.
+
+activity
+Activité du fournisseur lorsqu’elle est disponible.
+
+purchase_orders[]
+Liste des bons de commande.
+
+purchase_order_id
+Identifiant interne du bon de commande.
+
+customer_name
+Client ayant émis le bon de commande.
+
+order_amount
+Montant du bon de commande.
+
+order_date
+Date du bon de commande.
+
+expected_delivery_date
+Date prévue de livraison lorsqu’elle est documentée.
+
+payment_terms
+Conditions de paiement prévues.
+
+status
+État du bon de commande.
+Exemples :
+SIGNED
+VALID
+PENDING
+CANCELLED
+UNKNOWN
+
+proformas[]
+Liste des factures proforma.
+
+proforma_id
+Identifiant interne.
+
+supplier_name
+Nom du fournisseur.
+
+amount
+Montant de la facture proforma.
+
+date
+Date de la proforma.
+
+purpose
+Objet de l’achat ou de la dépense prévue.
+
+contracts[]
+Liste des contrats commerciaux identifiables.
+
+contract_id
+Identifiant interne.
+
+customer
+Client ou cocontractant.
+
+contract_amount
+Montant du contrat.
+
+start_date
+Date de début.
+
+end_date
+Date de fin.
+
+payment_terms
+Modalités de règlement.
+
+status
+Statut du contrat.
+Exemples :
+SIGNED
+ACTIVE
+EXPIRED
+CANCELLED
+UNKNOWN
+
+markets[]
+Liste des marchés publics ou privés identifiables.
+
+market_id
+Identifiant interne.
+
+customer
+Maître d’ouvrage ou donneur d’ordre.
+
+market_amount
+Montant du marché.
+
+start_date
+Date de début du marché.
+
+end_date
+Date de fin du marché.
+
+status
+État du marché.
+
+────────────────────────────────────────
+10. FUTURE_CASH_FLOWS[]
+────────────────────────────────────────
+
+future_cash_flows[]
+Liste des encaissements futurs explicitement documentés.
+
+cash_flow_id
+Identifiant interne du flux.
+
+origin
+Origine du flux.
+Exemples :
+Purchase order
+Contract
+Market
+Invoice
+
+customer
+Client devant effectuer le paiement.
+
+expected_collection_date
+Date prévue d’encaissement.
+
+expected_collection_amount
+Montant attendu.
+
+status
+Statut du flux.
+Exemples :
+CONFIRMED
+EXPECTED
+UNCERTAIN
+CANCELLED
+
+source_document
+Document justifiant le flux futur.
+
+Important :
+Ne créer un flux futur que lorsqu’il est documenté. Ne pas inventer
+de prévision à partir du chiffre d’affaires passé.
+
+────────────────────────────────────────
+11. DOCUMENTS[]
+────────────────────────────────────────
+
+documents[]
+Liste des documents fournis et traités.
+
+document_id
+Identifiant interne du document. Ce champ sert à identifier le document
+dans la liste des documents et non à remplacer la provenance détaillée
+des données extraites.
+
+document_name
+Nom du document.
+
+document_type
+Type du document.
+
+pages
+Nombre de pages du document lorsqu’il est disponible.
+
+processing_status
+État du traitement.
+Valeurs :
+PROCESSED
+PARTIALLY_PROCESSED
+FAILED
+UNREADABLE
+
+────────────────────────────────────────
+12. MISSING_INFORMATION[]
+────────────────────────────────────────
+
+missing_information[]
+Liste des informations nécessaires qui n’ont pas pu être trouvées.
+
+field
+Chemin exact du champ manquant dans le JSON.
+
+status
+Doit être MISSING.
+
+reason
+Explication de l’absence de l’information.
+
+required
+Indique si l’information est nécessaire à l’analyse.
+
+acceptable_documents[]
+Types de documents susceptibles de contenir l’information.
+
+question
+Question claire à poser au client ou au gestionnaire pour obtenir
+l’information ou le document manquant.
+
+────────────────────────────────────────
+13. CONFLICTS[]
+────────────────────────────────────────
+
+conflicts[]
+Liste des informations pour lesquelles plusieurs sources présentent
+des valeurs contradictoires.
+
+field
+Chemin exact du champ concerné.
+
+status
+Doit être CONFLICT.
+
+reason
+Explication du conflit.
+
+values[]
+Liste des valeurs contradictoires, chacune accompagnée de sa source.
+
+requires_human_review
+Doit être true lorsqu’une décision humaine est nécessaire pour résoudre
+le conflit.
+
+Le LLM ne doit jamais choisir arbitrairement entre deux valeurs contradictoires.
+
+────────────────────────────────────────
+14. EXTRACTION_METADATA
+────────────────────────────────────────
+
+extraction_metadata
+Informations techniques relatives à l’extraction.
+
+model
+Nom du modèle LLM utilisé.
+
+extraction_timestamp
+Date et heure de l’extraction.
+
+documents_processed
+Nombre de documents correctement traités.
+
+documents_failed
+Nombre de documents dont l’extraction a échoué.
+
+overall_confidence
+Niveau global de confiance de l’extraction.
+
+────────────────────────────────────────
+15. RÈGLE DE PROVENANCE POUR CHAQUE DONNÉE
+────────────────────────────────────────
+
+Lorsqu’une donnée est extraite, elle doit conserver au minimum :
+
+value
+Valeur effectivement trouvée dans le document.
+
+source
+Origine exacte de la valeur.
+
+confidence
+Niveau de confiance compris entre 0 et 1.
+
+status
+État de la donnée.
+
+Exemple :
+
+ebe:
+  value: 18500000
+  currency: XAF
+  source:
+    document_name: Etats_financiers_2025.pdf
+    document_type: FINANCIAL_STATEMENT
+    page: 13
+    section: Compte de résultat
+    label: Excédent Brut d’Exploitation
+    text_excerpt: "EBE : 18 500 000 FCFA"
+  confidence: 0.98
+  status: EXTRACTED
+
+────────────────────────────────────────
+16. INTERDICTIONS ABSOLUES
+────────────────────────────────────────
+
+Le LLM d’extraction ne doit jamais :
+
+- inventer une donnée absente ;
+- remplacer une valeur absente par une estimation ;
+- choisir silencieusement entre deux valeurs contradictoires ;
+- inventer une source ;
+- inventer un numéro de page ;
+- calculer un ratio financier ;
+- interpréter la rentabilité ;
+- interpréter la capacité de remboursement ;
+- produire un score de risque ;
+- produire une recommandation de crédit.
+
+Son rôle dans le Module 1 est uniquement :
+
+DOCUMENTS
+→ EXTRACTION
+→ NORMALISATION
+→ PROVENANCE
+→ IDENTIFICATION DES MANQUANTS
+→ IDENTIFICATION DES CONFLITS
+→ JSON STRUCTURÉ

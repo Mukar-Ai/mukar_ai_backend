@@ -1,0 +1,923 @@
+{
+ "application": {
+  "application_id": null,
+  "application_date": "2026-09-10",
+  "analysis_reference_period": {
+   "start_date": "2026-06-01",
+   "end_date": "2026-08-31"
+  },
+  "status": "EXTRACTED",
+  "source": {
+   "document_id": null,
+   "document_name": "Demande_de_credit.txt",
+   "document_type": "OTHER",
+   "page": null,
+   "section": "OBJET",
+   "text_excerpt": "J'ai l'honneur de me presenter devant vous monsieur le gestionnaire pour solliciter une aide fiancniere dans mon business. Dans le but d'agrandir mon business, et de creer de l'employabilit\u00e9, une somme de 3000000 me permettra de me posisier comme acteur majeur dans l'economie Camerounaise"
+  },
+  "confidence": 0.95
+ },
+ "company": {
+  "legal_name": {
+   "value": "REDCAP SOCITY SARL",
+   "source": {
+    "document_id": null,
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "NOM DE L'ENTREPRISE",
+    "text_excerpt": "NOM DE L'ENTREPRISE: REDCAP SOCITY SARL"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "trade_name": {
+   "value": "REDCAP SOCITY",
+   "source": {
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "NOM COMMERCIAL",
+    "text_excerpt": "NOM COMMERCIAL: REDCAP SOCITY"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "legal_form": {
+   "value": "SARL",
+   "source": {
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "STATUT JURIDIQUE",
+    "text_excerpt": "STATUT JURIDIQUE: SARL"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "registration_number": {
+   "value": "AA-0001",
+   "source": {
+    "document_name": "User_Prompt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "Instruction",
+    "label": "Num\u00e9ro d'immatriculation",
+    "text_excerpt": "Numero d'imatriculation est AA-0001"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "tax_identifier": {
+   "value": "IDF-2025",
+   "source": {
+    "document_name": "User_Prompt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "Instruction",
+    "label": "Identifiant fiscal",
+    "text_excerpt": "L'identification fiscal de cet entreprise, le voici: IDF-2025"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "activity_sector": {
+   "value": "Agriculture",
+   "source": {
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "DESCRIPTION DE L'ETABLISSEMENT",
+    "text_excerpt": "Nous sommes une entreprise oeuvrant de le domaine de l'agriculture en ce qui concerne les ventes des tomates biens freches, bio sans agent chimique."
+   },
+   "confidence": 0.9,
+   "status": "EXTRACTED"
+  },
+  "main_activity": {
+   "value": "Vente de tomates fra\u00eeches, bio sans agent chimique",
+   "source": {
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "DESCRIPTION DE L'ETABLISSEMENT",
+    "text_excerpt": "Nous sommes une entreprise oeuvrant de le domaine de l'agriculture en ce qui concerne les ventes des tomates biens freches, bio sans agent chimique."
+   },
+   "confidence": 0.9,
+   "status": "EXTRACTED"
+  },
+  "creation_date": {
+   "value": "2025-01-01",
+   "source": {
+    "document_name": "User_Prompt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "Instruction",
+    "label": "Date de cr\u00e9ation",
+    "text_excerpt": "et ca a \u00e9t\u00e9 cr\u00e9e en 2025"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "address": null
+ },
+ "credit_request": {
+  "requested_amount": {
+   "value": 3000000,
+   "currency": "XAF",
+   "source": {
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "OBJET",
+    "text_excerpt": "une somme de 3000000 me permettra de me posisier comme acteur majeur dans l'economie Camerounaise"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "purpose": {
+   "value": "Agrandissement du business et cr\u00e9ation d'employabilit\u00e9",
+   "source": {
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "OBJET",
+    "text_excerpt": "Dans le but d'agrandir mon business, et de creer de l'employabilit\u00e9"
+   },
+   "confidence": 1.0,
+   "status": "EXTRACTED"
+  },
+  "purpose_detail": {
+   "value": "Permettre \u00e0 l'entreprise de se positionner comme acteur majeur dans l'\u00e9conomie Camerounaise.",
+   "source": {
+    "document_name": "Demande_de_credit.txt",
+    "document_type": "OTHER",
+    "page": null,
+    "section": "OBJET",
+    "text_excerpt": "une somme de 3000000 me permettra de me posisier comme acteur majeur dans l'economie Camerounaise"
+   },
+   "confidence": 0.9,
+   "status": "EXTRACTED"
+  },
+  "requested_term_months": null,
+  "requested_interest_rate": null,
+  "grace_period_months": null,
+  "repayment_frequency": null,
+  "borrower_contribution": null
+ },
+ "financial_statements": {
+  "periods": [
+   {
+    "period": "2026-06",
+    "revenue_ht": {
+     "value": 240000,
+     "currency": "XAF",
+     "period": "2026-06",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "COMPTABILITE",
+      "label": "entr\u00e9e du mois de Juin",
+      "text_excerpt": "entr\u00e9e du mois de Juin: 240000"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "revenue_ttc": null,
+    "purchases": null,
+    "cost_of_goods_sold": null,
+    "gross_margin": null,
+    "operating_expenses": {
+     "value": 17000,
+     "currency": "XAF",
+     "period": "2026-06",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "COMPTABILITE",
+      "label": "Depense du mois de Juin",
+      "text_excerpt": "Depense du mois de Juin: 17000"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "ebe": null,
+    "depreciation": null,
+    "financial_expenses": null,
+    "taxes": null,
+    "net_income": null
+   },
+   {
+    "period": "2026-07",
+    "revenue_ht": {
+     "value": 300000,
+     "currency": "XAF",
+     "period": "2026-07",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "COMPTABILITE",
+      "label": "Entr\u00e9e du mois de Juillet",
+      "text_excerpt": "Entr\u00e9e du mois de Juillet: 300000"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "revenue_ttc": null,
+    "purchases": null,
+    "cost_of_goods_sold": null,
+    "gross_margin": null,
+    "operating_expenses": {
+     "value": 400000,
+     "currency": "XAF",
+     "period": "2026-07",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "COMPTABILITE",
+      "label": "Depense du mois de Juillet",
+      "text_excerpt": "Depense du mois de Juillet: 400000"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "ebe": null,
+    "depreciation": null,
+    "financial_expenses": null,
+    "taxes": null,
+    "net_income": null
+   },
+   {
+    "period": "2026-08",
+    "revenue_ht": {
+     "value": 700000,
+     "currency": "XAF",
+     "period": "2026-08",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "COMPTABILITE",
+      "label": "Entr\u00e9e du mois d'Aout",
+      "text_excerpt": "Entr\u00e9e du mois d'Aout: 700000"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "revenue_ttc": null,
+    "purchases": null,
+    "cost_of_goods_sold": null,
+    "gross_margin": null,
+    "operating_expenses": {
+     "value": 200000,
+     "currency": "XAF",
+     "period": "2026-08",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "COMPTABILITE",
+      "label": "depense du mois de Aout",
+      "text_excerpt": "depense du mois de Aout: 200000"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "ebe": null,
+    "depreciation": null,
+    "financial_expenses": null,
+    "taxes": null,
+    "net_income": null
+   }
+  ],
+  "revenue_ht": null,
+  "revenue_ttc": null,
+  "purchases": null,
+  "cost_of_goods_sold": null,
+  "gross_margin": null,
+  "operating_expenses": null,
+  "ebe": null,
+  "depreciation": null,
+  "financial_expenses": null,
+  "taxes": null,
+  "net_income": null
+ },
+ "balance_sheet": {
+  "period": null,
+  "total_assets": null,
+  "fixed_assets": null,
+  "inventory": null,
+  "trade_receivables": null,
+  "cash": null,
+  "equity": null,
+  "long_term_debt": null,
+  "short_term_financial_debt": null,
+  "trade_payables": null,
+  "tax_payables": null,
+  "other_current_liabilities": null
+ },
+ "banking": {
+  "analysis_period": {
+   "start_date": null,
+   "end_date": null,
+   "duration_months": null
+  },
+  "accounts": [],
+  "transactions": [],
+  "aggregates": {
+   "total_credits": null,
+   "total_debits": null,
+   "average_balance": null
+  },
+  "rejected_transactions": [],
+  "bank_fees": [],
+  "overdraft_events": [],
+  "commissions": []
+ },
+ "existing_debts": [],
+ "commercial_information": {
+  "customers": [
+   {
+    "customer_id": null,
+    "name": {
+     "value": "FarmGen",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Client",
+      "text_excerpt": "Avec FarmGen, nous avons pass\u00e9 un contrat"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "activity": null
+   },
+   {
+    "customer_id": null,
+    "name": {
+     "value": "CamerSafe",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Client",
+      "text_excerpt": "Avec CamerSafe, nous avons pass\u00e9 un contrat"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "activity": null
+   },
+   {
+    "customer_id": null,
+    "name": {
+     "value": "AgriSafeFood",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Client",
+      "text_excerpt": "Avec AgriSafeFood, nous avons pass\u00e9 un contrat"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "activity": null
+   }
+  ],
+  "suppliers": [],
+  "purchase_orders": [],
+  "proformas": [],
+  "contracts": [
+   {
+    "contract_id": null,
+    "customer": {
+     "value": "FarmGen",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Client",
+      "text_excerpt": "Avec FarmGen, nous avons pass\u00e9 un contrat de 3 tones de tomates par mois pendant 2 ans a un prix de 23 millions FCFA"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "contract_amount": {
+     "value": 23000000,
+     "currency": "XAF",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Montant du contrat",
+      "text_excerpt": "a un prix de 23 millions FCFA"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "start_date": null,
+    "end_date": null,
+    "payment_terms": null,
+    "status": {
+     "value": "ACTIVE",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Dur\u00e9e du contrat",
+      "text_excerpt": "pendant 2 ans"
+     },
+     "confidence": 0.9,
+     "status": "EXTRACTED"
+    },
+    "source_document": {
+     "document_name": "Demande_de_credit.txt",
+     "document_type": "OTHER",
+     "page": null,
+     "section": "CONTRACTS",
+     "text_excerpt": "Avec FarmGen, nous avons pass\u00e9 un contrat de 3 tones de tomates par mois pendant 2 ans a un prix de 23 millions FCFA"
+    }
+   },
+   {
+    "contract_id": null,
+    "customer": {
+     "value": "CamerSafe",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Client",
+      "text_excerpt": "Avec CamerSafe, nous avons pass\u00e9 un contrat de 300Kg de tomates par mois pendant 3 ans a un prix de 2 millions"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "contract_amount": {
+     "value": 2000000,
+     "currency": "XAF",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Montant du contrat",
+      "text_excerpt": "a un prix de 2 millions"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "start_date": null,
+    "end_date": null,
+    "payment_terms": null,
+    "status": {
+     "value": "ACTIVE",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Dur\u00e9e du contrat",
+      "text_excerpt": "pendant 3 ans"
+     },
+     "confidence": 0.9,
+     "status": "EXTRACTED"
+    },
+    "source_document": {
+     "document_name": "Demande_de_credit.txt",
+     "document_type": "OTHER",
+     "page": null,
+     "section": "CONTRACTS",
+     "text_excerpt": "Avec CamerSafe, nous avons pass\u00e9 un contrat de 300Kg de tomates par mois pendant 3 ans a un prix de 2 millions"
+    }
+   },
+   {
+    "contract_id": null,
+    "customer": {
+     "value": "AgriSafeFood",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Client",
+      "text_excerpt": "Avec AgriSafeFood, nous avons pass\u00e9 un contrat de 30kg par jour pendant 1 an a un prix de 800 mille"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "contract_amount": {
+     "value": 800000,
+     "currency": "XAF",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Montant du contrat",
+      "text_excerpt": "a un prix de 800 mille"
+     },
+     "confidence": 1.0,
+     "status": "EXTRACTED"
+    },
+    "start_date": null,
+    "end_date": null,
+    "payment_terms": null,
+    "status": {
+     "value": "ACTIVE",
+     "source": {
+      "document_name": "Demande_de_credit.txt",
+      "document_type": "OTHER",
+      "page": null,
+      "section": "CONTRACTS",
+      "label": "Dur\u00e9e du contrat",
+      "text_excerpt": "pendant 1 an"
+     },
+     "confidence": 0.9,
+     "status": "EXTRACTED"
+    },
+    "source_document": {
+     "document_name": "Demande_de_credit.txt",
+     "document_type": "OTHER",
+     "page": null,
+     "section": "CONTRACTS",
+     "text_excerpt": "Avec AgriSafeFood, nous avons pass\u00e9 un contrat de 30kg par jour pendant 1 an a un prix de 800 mille"
+    }
+   }
+  ],
+  "markets": []
+ },
+ "future_cash_flows": [],
+ "documents": [
+  {
+   "document_id": null,
+   "document_name": "Demande_de_credit.txt",
+   "document_type": "OTHER",
+   "pages": null,
+   "processing_status": "PROCESSED"
+  }
+ ],
+ "missing_information": [
+  {
+   "field": "company.address",
+   "status": "MISSING",
+   "reason": "L'adresse officielle de l'entreprise n'est pas mentionn\u00e9e.",
+   "required": true,
+   "acceptable_documents": [
+    "STATUTES",
+    "RCCM"
+   ],
+   "question": "Quelle est l'adresse officielle de REDCAP SOCITY SARL ?"
+  },
+  {
+   "field": "credit_request.requested_term_months",
+   "status": "MISSING",
+   "reason": "La dur\u00e9e souhait\u00e9e du cr\u00e9dit n'est pas sp\u00e9cifi\u00e9e.",
+   "required": true,
+   "acceptable_documents": [
+    "LOAN_AGREEMENT",
+    "APPLICATION_FORM"
+   ],
+   "question": "Quelle est la dur\u00e9e souhait\u00e9e pour le cr\u00e9dit de 3 000 000 XAF ?"
+  },
+  {
+   "field": "credit_request.requested_interest_rate",
+   "status": "MISSING",
+   "reason": "Le taux d'int\u00e9r\u00eat demand\u00e9 n'est pas sp\u00e9cifi\u00e9.",
+   "required": true,
+   "acceptable_documents": [
+    "LOAN_AGREEMENT",
+    "APPLICATION_FORM"
+   ],
+   "question": "Quel est le taux d'int\u00e9r\u00eat souhait\u00e9 pour le cr\u00e9dit de 3 000 000 XAF ?"
+  },
+  {
+   "field": "credit_request.borrower_contribution",
+   "status": "MISSING",
+   "reason": "L'apport personnel de l'entreprise n'est pas mentionn\u00e9.",
+   "required": true,
+   "acceptable_documents": [
+    "APPLICATION_FORM",
+    "BUSINESS_PLAN"
+   ],
+   "question": "Quel est le montant de l'apport personnel de REDCAP SOCITY SARL pour ce projet ?"
+  },
+  {
+   "field": "financial_statements.periods[].ebe",
+   "status": "MISSING",
+   "reason": "L'Exc\u00e9dent Brut d'Exploitation (EBE) n'est pas explicitement mentionn\u00e9 pour les p\u00e9riodes disponibles.",
+   "required": false,
+   "acceptable_documents": [
+    "FINANCIAL_STATEMENT"
+   ],
+   "question": "Veuillez fournir l'EBE pour les mois de juin, juillet et ao\u00fbt 2026."
+  },
+  {
+   "field": "financial_statements.periods[].depreciation",
+   "status": "MISSING",
+   "reason": "Les dotations aux amortissements ne sont pas explicitement mentionn\u00e9es pour les p\u00e9riodes disponibles.",
+   "required": false,
+   "acceptable_documents": [
+    "FINANCIAL_STATEMENT"
+   ],
+   "question": "Veuillez fournir les dotations aux amortissements pour les mois de juin, juillet et ao\u00fbt 2026."
+  },
+  {
+   "field": "financial_statements.periods[].financial_expenses",
+   "status": "MISSING",
+   "reason": "Les charges financi\u00e8res ne sont pas explicitement mentionn\u00e9es pour les p\u00e9riodes disponibles.",
+   "required": false,
+   "acceptable_documents": [
+    "FINANCIAL_STATEMENT"
+   ],
+   "question": "Veuillez fournir les charges financi\u00e8res pour les mois de juin, juillet et ao\u00fbt 2026."
+  },
+  {
+   "field": "financial_statements.periods[].taxes",
+   "status": "MISSING",
+   "reason": "Les imp\u00f4ts et taxes ne sont pas explicitement mentionn\u00e9s pour les p\u00e9riodes disponibles.",
+   "required": false,
+   "acceptable_documents": [
+    "FINANCIAL_STATEMENT",
+    "TAX_DOCUMENT"
+   ],
+   "question": "Veuillez fournir les imp\u00f4ts et taxes pour les mois de juin, juillet et ao\u00fbt 2026."
+  },
+  {
+   "field": "financial_statements.periods[].net_income",
+   "status": "MISSING",
+   "reason": "Le r\u00e9sultat net n'est pas explicitement mentionn\u00e9 pour les p\u00e9riodes disponibles.",
+   "required": false,
+   "acceptable_documents": [
+    "FINANCIAL_STATEMENT"
+   ],
+   "question": "Veuillez fournir le r\u00e9sultat net pour les mois de juin, juillet et ao\u00fbt 2026."
+  },
+  {
+   "field": "balance_sheet.period",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir le bilan de l'entreprise."
+  },
+  {
+   "field": "balance_sheet.total_assets",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir le total de l'actif du bilan."
+  },
+  {
+   "field": "balance_sheet.fixed_assets",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les actifs immobilis\u00e9s du bilan."
+  },
+  {
+   "field": "balance_sheet.inventory",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les stocks du bilan."
+  },
+  {
+   "field": "balance_sheet.trade_receivables",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les cr\u00e9ances clients du bilan."
+  },
+  {
+   "field": "balance_sheet.cash",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les disponibilit\u00e9s (banque et caisse) du bilan."
+  },
+  {
+   "field": "balance_sheet.equity",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les capitaux propres du bilan."
+  },
+  {
+   "field": "balance_sheet.long_term_debt",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les dettes financi\u00e8res \u00e0 moyen et long terme du bilan."
+  },
+  {
+   "field": "balance_sheet.short_term_financial_debt",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les dettes financi\u00e8res \u00e0 court terme du bilan."
+  },
+  {
+   "field": "balance_sheet.trade_payables",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les dettes fournisseurs du bilan."
+  },
+  {
+   "field": "balance_sheet.tax_payables",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET",
+    "TAX_DOCUMENT"
+   ],
+   "question": "Veuillez fournir les dettes fiscales du bilan."
+  },
+  {
+   "field": "balance_sheet.other_current_liabilities",
+   "status": "MISSING",
+   "reason": "Aucune information de bilan n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "BALANCE_SHEET"
+   ],
+   "question": "Veuillez fournir les autres dettes courantes du bilan."
+  },
+  {
+   "field": "banking.analysis_period.start_date",
+   "status": "MISSING",
+   "reason": "Aucun relev\u00e9 bancaire n'a \u00e9t\u00e9 fourni.",
+   "required": false,
+   "acceptable_documents": [
+    "BANK_STATEMENT"
+   ],
+   "question": "Veuillez fournir les relev\u00e9s bancaires de l'entreprise."
+  },
+  {
+   "field": "banking.analysis_period.end_date",
+   "status": "MISSING",
+   "reason": "Aucun relev\u00e9 bancaire n'a \u00e9t\u00e9 fourni.",
+   "required": false,
+   "acceptable_documents": [
+    "BANK_STATEMENT"
+   ],
+   "question": "Veuillez fournir les relev\u00e9s bancaires de l'entreprise."
+  },
+  {
+   "field": "banking.aggregates.total_credits",
+   "status": "MISSING",
+   "reason": "Aucun relev\u00e9 bancaire n'a \u00e9t\u00e9 fourni pour calculer les agr\u00e9gats.",
+   "required": false,
+   "acceptable_documents": [
+    "BANK_STATEMENT"
+   ],
+   "question": "Veuillez fournir les relev\u00e9s bancaires de l'entreprise afin d'identifier le total des cr\u00e9dits."
+  },
+  {
+   "field": "banking.aggregates.total_debits",
+   "status": "MISSING",
+   "reason": "Aucun relev\u00e9 bancaire n'a \u00e9t\u00e9 fourni pour calculer les agr\u00e9gats.",
+   "required": false,
+   "acceptable_documents": [
+    "BANK_STATEMENT"
+   ],
+   "question": "Veuillez fournir les relev\u00e9s bancaires de l'entreprise afin d'identifier le total des d\u00e9bits."
+  },
+  {
+   "field": "banking.aggregates.average_balance",
+   "status": "MISSING",
+   "reason": "Aucun relev\u00e9 bancaire n'a \u00e9t\u00e9 fourni pour calculer les agr\u00e9gats.",
+   "required": false,
+   "acceptable_documents": [
+    "BANK_STATEMENT"
+   ],
+   "question": "Veuillez fournir les relev\u00e9s bancaires de l'entreprise afin d'identifier le solde moyen."
+  },
+  {
+   "field": "existing_debts[]",
+   "status": "MISSING",
+   "reason": "Aucune information sur les dettes existantes n'a \u00e9t\u00e9 fournie.",
+   "required": false,
+   "acceptable_documents": [
+    "LOAN_AGREEMENT",
+    "BANK_STATEMENT"
+   ],
+   "question": "Veuillez fournir la liste des dettes et cr\u00e9dits existants de l'entreprise."
+  },
+  {
+   "field": "commercial_information.customers[].activity",
+   "status": "MISSING",
+   "reason": "L'activit\u00e9 des clients n'est pas sp\u00e9cifi\u00e9e.",
+   "required": false,
+   "acceptable_documents": [
+    "CONTRACT",
+    "PROFORMA",
+    "PURCHASE_ORDER"
+   ],
+   "question": "Quelle est l'activit\u00e9 de FarmGen, CamerSafe et AgriSafeFood ?"
+  },
+  {
+   "field": "commercial_information.suppliers[]",
+   "status": "MISSING",
+   "reason": "Aucun fournisseur n'a \u00e9t\u00e9 identifi\u00e9.",
+   "required": false,
+   "acceptable_documents": [
+    "PROFORMA",
+    "INVOICE"
+   ],
+   "question": "Veuillez fournir la liste des fournisseurs de l'entreprise."
+  },
+  {
+   "field": "commercial_information.purchase_orders[]",
+   "status": "MISSING",
+   "reason": "Aucun bon de commande n'a \u00e9t\u00e9 identifi\u00e9.",
+   "required": false,
+   "acceptable_documents": [
+    "PURCHASE_ORDER"
+   ],
+   "question": "Veuillez fournir les bons de commande de l'entreprise."
+  },
+  {
+   "field": "commercial_information.proformas[]",
+   "status": "MISSING",
+   "reason": "Aucune facture proforma n'a \u00e9t\u00e9 identifi\u00e9e.",
+   "required": false,
+   "acceptable_documents": [
+    "PROFORMA"
+   ],
+   "question": "Veuillez fournir les factures proforma de l'entreprise."
+  },
+  {
+   "field": "commercial_information.markets[]",
+   "status": "MISSING",
+   "reason": "Aucun march\u00e9 n'a \u00e9t\u00e9 identifi\u00e9.",
+   "required": false,
+   "acceptable_documents": [
+    "MARKET_DOCUMENT"
+   ],
+   "question": "Veuillez fournir les march\u00e9s publics ou priv\u00e9s de l'entreprise."
+  },
+  {
+   "field": "future_cash_flows[]",
+   "status": "MISSING",
+   "reason": "Aucun flux de tr\u00e9sorerie futur n'est explicitement document\u00e9.",
+   "required": false,
+   "acceptable_documents": [
+    "CONTRACT",
+    "MARKET_DOCUMENT",
+    "INVOICE"
+   ],
+   "question": "Veuillez fournir les documents justifiant les flux de tr\u00e9sorerie futurs attendus."
+  }
+ ],
+ "conflicts": [],
+ "extraction_metadata": {
+  "model": "LLM_Extraction_Module_1",
+  "extraction_timestamp": "2024-07-30T12:00:00Z",
+  "documents_processed": 1,
+  "documents_failed": 0,
+  "overall_confidence": 0.902
+ }
+}

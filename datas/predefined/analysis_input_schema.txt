@@ -1,0 +1,1004 @@
+{
+  "application": {
+    "application_id": null,
+    "application_date": null,
+
+    "analysis_reference_period": {
+      "start_date": null,
+      "end_date": null
+    },
+
+    "status": "EXTRACTED",
+
+    "source": {
+      "document_id": null,
+      "document_name": null,
+      "document_type": null,
+      "page": null,
+      "section": null,
+      "text_excerpt": null
+    },
+
+    "confidence": null
+  },
+
+  "company": {
+
+    "legal_name": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "trade_name": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "legal_form": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "registration_number": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "tax_identifier": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "activity_sector": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "main_activity": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "creation_date": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "address": {
+      "value": null,
+      "source": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+      "confidence": null,
+      "status": "MISSING"
+    }
+  },
+
+  "credit_request": {
+
+    "requested_amount": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "purpose": {
+      "value": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "purpose_detail": {
+      "value": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "requested_term_months": {
+      "value": null,
+      "unit": "months",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "requested_interest_rate": {
+      "value": null,
+      "unit": "percent",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "grace_period_months": {
+      "value": null,
+      "unit": "months",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "repayment_frequency": {
+      "value": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "borrower_contribution": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    }
+  },
+
+  "financial_statements": {
+
+    "periods": [],
+
+    "revenue_ht": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "revenue_ttc": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "purchases": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "cost_of_goods_sold": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "gross_margin": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "operating_expenses": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "ebe": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "depreciation": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "financial_expenses": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "taxes": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "net_income": {
+      "value": null,
+      "currency": "XAF",
+      "period": null,
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    }
+  },
+
+  "balance_sheet": {
+
+    "period": null,
+
+    "total_assets": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "fixed_assets": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "inventory": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "trade_receivables": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "cash": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "equity": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "long_term_debt": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "short_term_financial_debt": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "trade_payables": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "tax_payables": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    },
+
+    "other_current_liabilities": {
+      "value": null,
+      "currency": "XAF",
+      "source": {},
+      "confidence": null,
+      "status": "MISSING"
+    }
+  },
+
+  "banking": {
+
+    "analysis_period": {
+      "start_date": null,
+      "end_date": null,
+      "duration_months": null
+    },
+
+    "accounts": [
+      {
+        "account_id": null,
+        "bank_name": null,
+        "account_number_masked": null,
+        "currency": "XAF",
+
+        "source": {
+          "document_id": null,
+          "document_name": null,
+          "document_type": null,
+          "page": null,
+          "section": null,
+          "text_excerpt": null
+        },
+
+        "confidence": null,
+        "status": "MISSING"
+      }
+    ],
+
+    "transactions": [
+      {
+        "transaction_id": null,
+        "account_id": null,
+
+        "date": null,
+        "description": null,
+
+        "debit": null,
+        "credit": null,
+
+        "currency": "XAF",
+
+        "balance_after_transaction": null,
+
+        "transaction_type": null,
+
+        "source": {
+          "document_id": null,
+          "document_name": null,
+          "document_type": null,
+          "page": null,
+          "section": null,
+          "text_excerpt": null
+        },
+
+        "confidence": null,
+        "status": "MISSING"
+      }
+    ],
+
+    "aggregates": {
+
+      "total_credits": {
+        "value": null,
+        "currency": "XAF",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "total_debits": {
+        "value": null,
+        "currency": "XAF",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "average_balance": {
+        "value": null,
+        "currency": "XAF",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      }
+    },
+
+    "rejected_transactions": [
+      {
+        "date": null,
+        "description": null,
+        "amount": null,
+        "currency": "XAF",
+
+        "reason": null,
+
+        "source": {
+          "document_id": null,
+          "document_name": null,
+          "document_type": null,
+          "page": null,
+          "section": null,
+          "text_excerpt": null
+        },
+
+        "confidence": null,
+        "status": "MISSING"
+      }
+    ],
+
+    "bank_fees": [
+      {
+        "date": null,
+        "description": null,
+        "amount": null,
+        "currency": "XAF",
+
+        "fee_type": null,
+
+        "source": {
+          "document_id": null,
+          "document_name": null,
+          "document_type": null,
+          "page": null,
+          "section": null,
+          "text_excerpt": null
+        },
+
+        "confidence": null,
+        "status": "MISSING"
+      }
+    ],
+
+    "overdraft_events": [
+      {
+        "date": null,
+        "description": null,
+        "amount": null,
+        "currency": "XAF",
+
+        "overdraft_limit": null,
+        "overdraft_used": null,
+
+        "source": {
+          "document_id": null,
+          "document_name": null,
+          "document_type": null,
+          "page": null,
+          "section": null,
+          "text_excerpt": null
+        },
+
+        "confidence": null,
+        "status": "MISSING"
+      }
+    ],
+
+    "commissions": [
+      {
+        "date": null,
+        "description": null,
+        "amount": null,
+        "currency": "XAF",
+
+        "commission_type": null,
+
+        "source": {
+          "document_id": null,
+          "document_name": null,
+          "document_type": null,
+          "page": null,
+          "section": null,
+          "text_excerpt": null
+        },
+
+        "confidence": null,
+        "status": "MISSING"
+      }
+    ]
+  },
+
+  "existing_debts": [
+    {
+      "debt_id": null,
+
+      "lender": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "loan_type": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "original_amount": {
+        "value": null,
+        "currency": "XAF",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "outstanding_principal": {
+        "value": null,
+        "currency": "XAF",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "interest_rate": {
+        "value": null,
+        "unit": "percent",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "installment_amount": {
+        "value": null,
+        "currency": "XAF",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "payment_frequency": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "remaining_term_months": {
+        "value": null,
+        "unit": "months",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "next_due_date": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "source_document": {
+        "document_id": null,
+        "document_name": null,
+        "document_type": null,
+        "page": null,
+        "section": null,
+        "text_excerpt": null
+      },
+
+      "confidence": null,
+      "status": "MISSING"
+    }
+  ],
+
+  "commercial_information": {
+
+    "customers": [
+      {
+        "customer_id": null,
+
+        "name": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "activity": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        }
+      }
+    ],
+
+    "suppliers": [
+      {
+        "supplier_id": null,
+
+        "name": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "activity": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        }
+      }
+    ],
+
+    "purchase_orders": [
+      {
+        "purchase_order_id": null,
+
+        "customer_name": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "order_amount": {
+          "value": null,
+          "currency": "XAF",
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "order_date": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "expected_delivery_date": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "payment_terms": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "status": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "source_document": {}
+      }
+    ],
+
+    "proformas": [
+      {
+        "proforma_id": null,
+
+        "supplier_name": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "amount": {
+          "value": null,
+          "currency": "XAF",
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "date": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "purpose": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "source_document": {}
+      }
+    ],
+
+    "contracts": [
+      {
+        "contract_id": null,
+
+        "customer": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "contract_amount": {
+          "value": null,
+          "currency": "XAF",
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "start_date": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "end_date": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "payment_terms": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "status": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "source_document": {}
+      }
+    ],
+
+    "markets": [
+      {
+        "market_id": null,
+
+        "customer": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "market_amount": {
+          "value": null,
+          "currency": "XAF",
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "start_date": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "end_date": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "status": {
+          "value": null,
+          "source": {},
+          "confidence": null,
+          "status": "MISSING"
+        },
+
+        "source_document": {}
+      }
+    ]
+  },
+
+  "future_cash_flows": [
+    {
+      "cash_flow_id": null,
+
+      "origin": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "customer": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "expected_collection_date": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "expected_collection_amount": {
+        "value": null,
+        "currency": "XAF",
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "status": {
+        "value": null,
+        "source": {},
+        "confidence": null,
+        "status": "MISSING"
+      },
+
+      "source_document": {}
+    }
+  ],
+
+  "documents": [
+    {
+      "document_id": null,
+      "document_name": null,
+      "document_type": null,
+      "pages": null,
+      "processing_status": "PROCESSED"
+    }
+  ],
+
+  "missing_information": [
+    {
+      "field": null,
+      "status": "MISSING",
+      "reason": null,
+      "required": true,
+      "acceptable_documents": [],
+      "question": null
+    }
+  ],
+
+  "conflicts": [
+    {
+      "field": null,
+      "status": "CONFLICT",
+      "reason": null,
+
+      "values": [
+        {
+          "value": null,
+          "source": {
+            "document_id": null,
+            "document_name": null,
+            "document_type": null,
+            "page": null,
+            "section": null,
+            "text_excerpt": null
+          }
+        }
+      ],
+
+      "requires_human_review": true
+    }
+  ],
+
+  "extraction_metadata": {
+    "model": null,
+    "extraction_timestamp": null,
+    "documents_processed": 0,
+    "documents_failed": 0,
+    "overall_confidence": null
+  }
+}
