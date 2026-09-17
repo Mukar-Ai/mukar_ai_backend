@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.responses import JSONResponse
-from fastapi.security import OAuth2PasswordRequestForm
+from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, select
 
 
@@ -16,6 +16,15 @@ router = APIRouter()
 @router.post("/register")
 async def signup(request: Request, session: Session = Depends(get_session)):
     data = await request.json()
+
+    mfi_name = session.exec(select(User).where(User.mfi_name == data['mfi_name'])).first()
+    if mfi_name:
+         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Cet organisation existe deja")
+
+    email = session.exec(select(User).where(User.email == data['email'])).first() 
+    if email:
+         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Cet email existe deja")
+
     user = User(**data)
     session.add(user)
     session.commit()
