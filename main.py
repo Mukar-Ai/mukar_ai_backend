@@ -9,19 +9,11 @@ from app.db.session import engine
 # 2. Chargement de l'ensemble des modèles pour la création du schéma de BDD
 # Il est crucial d'importer tous les modèles ici pour que SQLModel les détecte.
 import app.auth.models
-# import app.ressources.models
 
 # 3. Import des routeurs (API minimale Point 27)
 from app.auth.endpoints import router as auth_router
 from app.analysis.endpoints import router as analysis_router
-# from app.ressources.endpoints import router as ressources_router
-# from app.api.endpoints.tenants import router as tenants_router
-# from app.api.endpoints.clients import router as clients_router
-# from app.api.endpoints.credit import router as credit_router
-# from app.api.endpoints.documents import router as documents_router
-# from app.api.endpoints.analysis import router as analysis_router
-# from app.api.endpoints.rag import router as rag_router
-# from app.api.endpoints.chat import router as chat_router
+
 
 
 @asynccontextmanager
